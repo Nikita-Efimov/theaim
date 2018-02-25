@@ -12,8 +12,8 @@ setInterval(checkTime, 100);
 
 function init()
 {
-	minHeight = 20;
-	maxHeight = window.innerHeight - 5;
+	minHeight = 5;
+	maxHeight = window.innerHeight - 20;
 	minWidth = 5;
 	maxWidth = window.innerWidth - 5;
 
@@ -23,9 +23,13 @@ function init()
 	p.style.left = minWidth + 'px';
 	p.style.width = maxWidth - minWidth + 'px';
 
-	var p = document.getElementsByClassName('circle')[0];
-	p.style.top = getRandomInt(minHeight + 50, maxHeight - 50) + "px";
-	p.style.left = getRandomInt(minWidth + 50, maxWidth - 50) + "px";
+	p = document.getElementsByClassName('circle')[0];
+	var circleSize = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).width);
+	p.style.top = getRandomInt(minHeight + circleSize, maxHeight - circleSize) + "px";
+	p.style.left = getRandomInt(minWidth + circleSize, maxWidth - circleSize) + "px";
+
+	p = document.getElementsByClassName('stats')[0];
+	p.style.top = maxHeight + 2 + "px";
 }
 
 function checkTime()
@@ -50,8 +54,9 @@ function changePos()
 {
 	score++;
 	var p = document.getElementsByClassName('circle')[0];
-	p.style.top = getRandomInt(minHeight + 70, maxHeight - 70) + "px";
-	p.style.left = getRandomInt(minWidth + 70, maxWidth - 70) + "px";
+	var circleSize = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).width);
+	p.style.top = getRandomInt(minHeight + circleSize, maxHeight - circleSize) + "px";
+	p.style.left = getRandomInt(minWidth + circleSize, maxWidth - circleSize) + "px";
 }
 
 function cursorMove(e)

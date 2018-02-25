@@ -13,8 +13,8 @@ body {
 
 .cursor {
 	background-color: red;
-	height: 30px;
-	width: 30px;
+	height: 28px;
+	width: 28px;
 	border-radius: 100% 100% 100% 100%;
 	position: absolute;
 	z-index: 1;
@@ -27,7 +27,6 @@ body {
 	border-color: black;
 	border-style: solid;
 	position: absolute;
-
 	top: 20px;
 	left: 5px;
 	height: 700px;
@@ -36,7 +35,6 @@ body {
 
 .stats {
 	position: absolute;
-
 	top: 1px;
 	left: 5px;
 	height: 20px;
