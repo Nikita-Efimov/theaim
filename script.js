@@ -24,7 +24,7 @@ function init()
 	p.style.width = maxWidth - minWidth + 'px';
 
 	p = document.getElementsByClassName('circle')[0];
-	var circleSize = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).width);
+	var circleSize = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).width) + parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).borderWidth);
 	p.style.top = getRandomInt(minHeight + circleSize, maxHeight - circleSize) + "px";
 	p.style.left = getRandomInt(minWidth + circleSize, maxWidth - circleSize) + "px";
 
@@ -54,7 +54,7 @@ function changePos()
 {
 	score++;
 	var p = document.getElementsByClassName('circle')[0];
-	var circleSize = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).width);
+	var circleSize = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).width) + parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).borderWidth);
 	p.style.top = getRandomInt(minHeight + circleSize, maxHeight - circleSize) + "px";
 	p.style.left = getRandomInt(minWidth + circleSize, maxWidth - circleSize) + "px";
 }
@@ -62,6 +62,7 @@ function changePos()
 function cursorMove(e)
 {
 	var p = document.getElementsByClassName('cursor')[0];
-	p.style.left = e.clientX - parseInt(getComputedStyle(document.getElementsByClassName('cursor')[0]).width)/2 + "px";
-	p.style.top = e.clientY - parseInt(getComputedStyle(document.getElementsByClassName('cursor')[0]).height)/2 + "px";
+	var circleSize = parseInt(getComputedStyle(document.getElementsByClassName('cursor')[0]).width)
+	p.style.left = e.clientX - circleSize/2 + "px";
+	p.style.top = e.clientY - circleSize/2 + "px";
 }
