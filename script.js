@@ -57,6 +57,6 @@ function changePos()
 function cursorMove(e)
 {
 	var p = document.getElementsByClassName('cursor')[0];
-	p.style.left = e.clientX - p.style.width/2 + "px";
-	p.style.top = e.clientY - p.style.height/2 + "px";
+	p.style.left = e.clientX - 10 + "px";
+	p.style.top = e.clientY - 10 + "px";
 }
