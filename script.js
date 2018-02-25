@@ -50,13 +50,13 @@ function changePos()
 {
 	score++;
 	var p = document.getElementsByClassName('circle')[0];
-	p.style.top = getRandomInt(minHeight + 50, maxHeight - 50) + "px";
-	p.style.left = getRandomInt(minWidth + 50, maxWidth - 50) + "px";
+	p.style.top = getRandomInt(minHeight + 70, maxHeight - 70) + "px";
+	p.style.left = getRandomInt(minWidth + 70, maxWidth - 70) + "px";
 }
 
 function cursorMove(e)
 {
 	var p = document.getElementsByClassName('cursor')[0];
-	p.style.left = e.clientX - 15 + "px";
-	p.style.top = e.clientY - 15 + "px";
+	p.style.left = e.clientX - parseInt(getComputedStyle(document.getElementsByClassName('cursor')[0]).width)/2 + "px";
+	p.style.top = e.clientY - parseInt(getComputedStyle(document.getElementsByClassName('cursor')[0]).height)/2 + "px";
 }
