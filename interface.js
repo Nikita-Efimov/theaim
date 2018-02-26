@@ -8,7 +8,7 @@ function init()
 
 	cursorP = document.getElementsByClassName('cursor')[0];
 	circleP = document.getElementsByClassName('circle')[0];
-	
+
 	scanCircleWidth = parseInt(getComputedStyle(document.getElementsByClassName('scancircle')[0]).width);
 	cursorSize = parseInt(getComputedStyle(document.getElementsByClassName('cursor')[0]).width);
 	circleBroderSize = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).borderWidth);
@@ -22,7 +22,7 @@ function windowResize()
 	minHeight = 5;
 	maxHeight = window.innerHeight - 22;
 	minWidth = 5;
-	maxWidth = window.innerWidth - 10;
+	maxWidth = window.innerWidth - 5;
 
 	var p = document.getElementsByClassName('area')[0];
 	p.style.top = minHeight + 'px';
