@@ -37,9 +37,9 @@ function init()
 function windowResize()
 {
 	minHeight = 5;
-	maxHeight = window.innerHeight - 30;
+	maxHeight = window.innerHeight - 22;
 	minWidth = 5;
-	maxWidth = window.innerWidth - 15;
+	maxWidth = window.innerWidth - 10;
 
 	var p = document.getElementsByClassName('area')[0];
 	p.style.top = minHeight + 'px';
