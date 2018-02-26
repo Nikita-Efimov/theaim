@@ -2,6 +2,16 @@ body {
 	cursor: none;
 }
 
+.kernel {
+	background-color: black;
+	height: 30px;
+	width: 30px;
+	border-radius: 100% 100% 100% 100%;
+	position: absolute;
+	top: 22px;
+	left: 22px;
+}
+
 .circle {
 	background-color: transparent;
 	height: 74px;

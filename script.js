@@ -1,16 +1,22 @@
 document.body.addEventListener("mousemove", cursorMove, true);
 document.body.getElementsByClassName('circle')[0].addEventListener("mouseover", changePos, false);
-window.addEventListener("resize", init);
+window.addEventListener("resize", windowResize);
 
-var minWidth, maxWidth, minHeight, maxHeight, startTime, score = 0;
+var minWidth, maxWidth, minHeight, maxHeight, startTime, score;
 
 init();
 
-changePos();
-
-setInterval(checkTime, 100);
-
 function init()
+{
+	score = 0;
+
+	windowResize();
+	changePos();
+
+	setInterval(checkTime, 100);
+}
+
+function windowResize()
 {
 	minHeight = 5;
 	maxHeight = window.innerHeight - 20;
@@ -30,6 +36,9 @@ function init()
 
 	p = document.getElementsByClassName('stats')[0];
 	p.style.top = maxHeight + 2 + "px";
+
+	score--;
+	changePos();
 }
 
 function checkTime()
