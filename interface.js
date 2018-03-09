@@ -1,21 +1,4 @@
-var minWidth, maxWidth, minHeight, maxHeightstartTime, score, scanCircleWidth, cursorSize,
-	circleBroderSize, circleXpos, circleYpos, circleSize, 
-	cursorP, circleP;
-
-function init()
-{
-	score = 0
-
-	cursorP = document.getElementsByClassName('cursor')[0];
-	circleP = document.getElementsByClassName('circle')[0];
-
-	scanCircleWidth = parseInt(getComputedStyle(document.getElementsByClassName('scancircle')[0]).width);
-	cursorSize = parseInt(getComputedStyle(document.getElementsByClassName('cursor')[0]).width);
-	circleBroderSize = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).borderWidth);
-	circleXpos = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).left);
-	circleYpos = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).top);
-	circleSize = parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).width) + parseInt(getComputedStyle(document.getElementsByClassName('circle')[0]).borderWidth) * 2;
-}
+var minWidth, maxWidth, minHeight, maxHeight, startTime;
 
 function windowResize()
 {
@@ -33,7 +16,7 @@ function windowResize()
 	p = document.getElementsByClassName('stats')[0];
 	p.style.top = maxHeight + 2 + "px";
 
-	changePos();
+	circles.nextCircle();
 }
 
 function checkTime()
